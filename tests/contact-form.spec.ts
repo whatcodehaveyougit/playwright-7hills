@@ -18,7 +18,6 @@ test("Contact Form Test", async ({ page }) => {
     )
     .fill("This is a playwright test");
   await expect(page.getByText("Submit")).toBeVisible();
-
-  // await page.getByRole("button", { name: "Submit" }).click();
-  // await expect(page.getByText("Thanks for being awesome")).toBeVisible();
+  await page.getByRole("button", { name: "Submit" }).click();
+  await expect(page.getByText("Thanks for being awesome")).toBeVisible();
 });
