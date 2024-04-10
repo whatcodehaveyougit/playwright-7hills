@@ -17,6 +17,8 @@ test("Contact Form Test", async ({ page }) => {
       "Ceilidh Location / Date of event / Event type and other relevent info please!"
     )
     .fill("This is a playwright test");
+  await expect(page.getByText("Submit")).toBeVisible();
+
   // await page.getByRole("button", { name: "Submit" }).click();
   // await expect(page.getByText("Thanks for being awesome")).toBeVisible();
 });
