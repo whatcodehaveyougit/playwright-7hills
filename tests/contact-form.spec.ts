@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test("Contact Form Test", async ({ page }) => {
-  await page.goto("https://7hillsceilidh.com/");
-  await page.getByRole("link", { name: "Contact ♦" }).click();
+  await page.goto("https://7hillsceilidh.com/contact");
+  // await page.getByRole("link", { name: "Contact" }).click();
   await page.getByPlaceholder("Joe Bloggs").click();
   await page.getByPlaceholder("Joe Bloggs").fill("Sigurd");
   await page.getByPlaceholder("ceilidhmaghee@gmail.com").click();
