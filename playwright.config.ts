@@ -57,7 +57,7 @@ export default defineConfig({
     },
     {
       name: "Mobile Safari",
-      grep: /mobileSubmit/,
+      grep: /submitMob/,
       use: { ...devices["iPhone 12"] },
     },
 
