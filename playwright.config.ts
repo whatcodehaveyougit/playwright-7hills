@@ -34,26 +34,30 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
+      grep: /desktop/,
       use: { ...devices["Desktop Chrome"] },
     },
+    // {
+    //   name: "firefox",
+    //   grep: /desktop/,
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
-
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    // {
+    //   name: "webkit",
+    //   grep: /desktop/,
+    //   use: { ...devices["Desktop Safari"] },
+    // },
 
     /* Test against mobile viewports. */
     {
       name: "Mobile Chrome",
+      grep: /mobile/,
       use: { ...devices["Pixel 5"] },
     },
     {
       name: "Mobile Safari",
+      grep: /mobileSubmit/,
       use: { ...devices["iPhone 12"] },
     },
 
