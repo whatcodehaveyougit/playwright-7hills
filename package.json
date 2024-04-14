@@ -10,8 +10,5 @@
   "devDependencies": {
     "@playwright/test": "^1.32.0",
     "@types/node": "^20.12.7"
-  },
-  "dependencies": {
-    "zenrows": "^1.3.2"
   }
 }

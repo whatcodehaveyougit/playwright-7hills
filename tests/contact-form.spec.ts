@@ -58,12 +58,15 @@ test.describe("submitMob", () => {
     await page.getByRole("link", { name: "Contact" }).click({ delay: 1000 });
     await page.waitForURL("https://7hillsceilidh.com/contact/");
     await page.getByPlaceholder("Joe Bloggs").click();
+    await page.waitForTimeout(1000);
     await page.getByPlaceholder("Joe Bloggs").fill("Sigurd");
     await page.getByPlaceholder("ceilidhmaghee@gmail.com").click();
+    await page.waitForTimeout(1000);
     await page
       .getByPlaceholder("ceilidhmaghee@gmail.com")
       .fill("7hillsceilidh@gmail.com");
     await page.getByPlaceholder("ceilidhmaghee@gmail.com").press("Tab");
+    await page.waitForTimeout(1000);
     await page.getByPlaceholder("345 678").fill("0123123123");
     await page.getByPlaceholder("345 678").press("Tab");
     await page
@@ -71,8 +74,12 @@ test.describe("submitMob", () => {
         "Ceilidh Location / Date of event / Event type and other relevent info please!"
       )
       .fill("This is a playwright test");
+    await page.waitForTimeout(1000);
     await expect(page.getByText("Submit")).toBeVisible();
     await page.getByRole("button", { name: "Submit" }).click({ delay: 5000 });
-    await expect(page.getByText("Thanks for being awesome")).toBeVisible();
+    await expect(page.getByText("Thanks for being awesome")).toBeAnyOf(
+      "https://en.wikipedia.org/wiki/Larry_Sanger",
+      "https://en.m.wikipedia.org/wiki/Larry_Sanger"
+    );
   });
 });
