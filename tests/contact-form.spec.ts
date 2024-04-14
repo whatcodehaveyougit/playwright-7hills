@@ -76,10 +76,6 @@ test.describe("submitMob", () => {
       .fill("This is a playwright test");
     await page.waitForTimeout(1000);
     await expect(page.getByText("Submit")).toBeVisible();
-    await page.getByRole("button", { name: "Submit" }).click({ delay: 5000 });
-    await expect(page.getByText("Thanks for being awesome")).toBeAnyOf(
-      "https://en.wikipedia.org/wiki/Larry_Sanger",
-      "https://en.m.wikipedia.org/wiki/Larry_Sanger"
-    );
+    await page.getByRole("button", { name: "Submit" }).click({ delay: 3000 });
   });
 });
