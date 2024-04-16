@@ -76,7 +76,7 @@ test.describe("submitMob", () => {
       .fill("This is a playwright test");
     await page.waitForTimeout(1000);
     await expect(page.getByText("Submit")).toBeVisible();
-    await page.getByRole("button", { name: "Submit" }).click({ delay: 5000 });
+    await page.getByRole("button", { name: "Submit" }).dispatchEvent("click");
     await expect(page.getByText("Thanks for being awesome")).toBeVisible();
   });
 });
