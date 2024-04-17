@@ -79,7 +79,7 @@ test.describe("submitMob", () => {
     await page.getByRole("button", { name: "Submit" }).dispatchEvent("click");
     await expect(
       page.getByText(
-        /^(Thanks for being awesome|The form was unable to submit. Please contact the site administrator.)$/
+        /^(Thanks for being awesome!|The form was unable to submit. Please contact the site administrator.)$/
       )
     ).toBeVisible();
   });
