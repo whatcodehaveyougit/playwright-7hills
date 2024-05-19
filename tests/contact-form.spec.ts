@@ -21,8 +21,11 @@ test.describe("desktop", () => {
       .fill("This is a playwright test");
     await expect(page.getByText("Submit")).toBeVisible();
     await page.getByRole("button", { name: "Submit" }).click({ delay: 2000 });
-    // await expect(page.getByText("Thanks for being awesome")).toBeVisible();
-  });
+    await expect(
+      page.getByText(
+        /^(Thanks for being awesome!|The form was unable to submit. Please contact the site administrator.)$/
+      )
+    ).toBeVisible();  });
 });
 
 test.describe("mobile", () => {
@@ -46,8 +49,8 @@ test.describe("mobile", () => {
       )
       .fill("This is a playwright test");
     await expect(page.getByText("Submit")).toBeVisible();
-    // await page.getByRole("button", { name: "Submit" }).click({ delay: 2000 });
-    // await expect(page.getByText("Thanks for being awesome")).toBeVisible();
+    await page.getByRole("button", { name: "Submit" }).click({ delay: 2000 });
+    await expect(page.getByText("Thanks for being awesome")).toBeVisible();
   });
 });
 
